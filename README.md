@@ -26,12 +26,9 @@ This project guide for working with Apache Kafka, specifically with AWS Managed 
 
 Before running the project, make sure you have the following installed:
 
-  
+-   Go (https://golang.org/)
 
-Go (https://golang.org/)
-
-Kafka broker (https://kafka.apache.org/) or AWS MSK should be configured with SASL_SSL and open publicly
-
+-   Kafka broker (https://kafka.apache.org/) or AWS MSK should be configured with SASL_SSL and open publicly
 
 ### Installation
 
@@ -41,20 +38,16 @@ Kafka broker (https://kafka.apache.org/) or AWS MSK should be configured with SA
 git clone https://github.com/yourusername/kafka-go.git
 cd kafka-go
 ```
-
 2.  Install dependencies:
-    
 ```
 go mod tidy
 ```
-    
 
 ## Usage
 
 ### Running the Kafka Consumer
 
 To run the Kafka consumer, execute the following command:
-
 ```
 go run cmd/consumer/main.go
 ```
@@ -64,7 +57,6 @@ This will start the consumer, which will continuously consume messages on consol
 ### Running the Kafka Producer
 
 To run the Kafka producer, execute the following command:
-
 ```
 go run cmd/producer/main.go
 ```
