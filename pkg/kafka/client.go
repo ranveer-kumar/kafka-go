@@ -6,6 +6,7 @@ import (
 	"context"
 	"crypto/tls"
 	"net"
+	"os"
 	"strings"
 
 	"github.com/twmb/franz-go/pkg/kgo"
@@ -30,6 +31,7 @@ func NewClient(cfg config.KafkaConfig) (*kgo.Client, error) {
 		}.AsSha512Mechanism()),
 		kgo.Dialer(dialerFunc),
 		kgo.ConsumeTopics(cfg.Topic),
+		kgo.WithLogger(kgo.BasicLogger(os.Stderr, kgo.LogLevelDebug, nil)), // Added 
 	}
 
 	client, err := kgo.NewClient(opts...)
